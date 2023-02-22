@@ -1,0 +1,31 @@
+@import "../../../../sass_library/library";
+
+
+.btn_reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn_change_password_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_change_password {
+  width: 90%;
+  height: 60px;
+  font-size: 25px;
+  line-height: 24px;
+  background-color: $purple_bc;
+  color: $white_fc;
+  border-radius: 30px;
+}
+
+@media (max-width: 540px) {
+  .btn_change_password {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+.error {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.error_container {
+  height: calc(100vh - 144px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.error_section {
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.error_code_content {
+  height: 35%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

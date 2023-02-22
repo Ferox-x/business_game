@@ -1,0 +1,26 @@
+.bs_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  min-height: 50px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  color: #7551FF;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (min-height: 1000px) {
+  .bs_button {
+    height: 70px;
+    font-size: 25px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .bs_button {
+    height: 90px;
+    font-size: 25px;
+  }
+}

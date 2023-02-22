@@ -1,0 +1,72 @@
+[
+  {
+    "model": "users.player",
+    "pk": 2,
+    "fields": {
+      "first_name": "PlayerName",
+      "last_name": "PlayerSecName",
+      "patronymic": "PlayerPatronymic",
+      "phone_number": "",
+      "coordinator_id": 1
+    }
+  },
+  {
+    "model": "users.coordinator",
+    "pk": 1,
+    "fields": {
+      "first_name": "",
+      "last_name": "",
+      "patronymic": "",
+      "phone_number": "",
+      "birthday": null,
+      "invite_code": null,
+      "attributes": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "users.attribute",
+    "pk": 1,
+    "fields": {
+      "attribute": "Школа"
+    }
+  },
+  {
+    "model": "users.attribute",
+    "pk": 2,
+    "fields": {
+      "attribute": "Класс"
+    }
+  },
+  {
+    "model": "users.attribute",
+    "pk": 3,
+    "fields": {
+      "attribute": "Средняя оценка"
+    }
+  },
+  {
+    "model": "users.userrole",
+    "pk": 1,
+    "fields": {
+      "name": "Admin"
+    }
+  },
+  {
+    "model": "users.userrole",
+    "pk": 2,
+    "fields": {
+      "name": "Coordinator"
+    }
+  },
+  {
+    "model": "users.userrole",
+    "pk": 3,
+    "fields": {
+      "name": "Player"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+.modal_coordinator_code_field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #6B53FF;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  padding: 0 30px;
+  height: 55px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.modal_coordinator_buttons_container {
+
+}
+
+@media (max-width: 380px) {
+  .modal_coordinator_code_field {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,67 @@
+.link_coordinator_container {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  padding: 0 5%;
+  background: #FFFFFF;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.link_coordinator_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link_coordinator_icon {
+  width: 25px;
+  height: 26px;
+  background-repeat: no-repeat;
+  position: center;
+  margin-right: 10px;
+}
+
+.link_coordinator_value {
+  color: rgba(107, 83, 255, .6);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 24px;
+}
+
+.link_coordinator_enter {
+  background-image: url("../../../../../static/img/burger_menu/burger_enter.svg");
+  width: 17px;
+  height: 30px;
+  background-repeat: no-repeat;
+  position: center;
+}
+
+.link_coordinator_container:hover {
+  background: rgba(107, 83, 255, 0.1);
+}
+
+.link_coordinator_enter:hover {
+  background-image: url("../../../../../static/img/burger_menu/burger_enter_active.svg");
+}
+
+.link_coordinator_icon_game {
+  background-image: url("../../../../../static/img/burger_menu/games.svg");
+}
+
+.link_coordinator_icon_profile {
+  background-image: url("../../../../../static/img/burger_menu/profile_icon.svg");
+}
+
+.link_coordinator_icon_users {
+  background-image: url("../../../../../static/img/burger_menu/users.svg");
+  width: 30px;
+}
+
+
+@media (max-width: 320px) {
+  .link_coordinator_value {
+    font-size: 22px;
+  }
+}

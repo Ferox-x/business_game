@@ -1,0 +1,19 @@
+.input_join_game {
+  display: flex;
+  justify-content: center;
+  height: 68px;
+  width: 80%;
+  border: 1px solid #6B53FF;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+  outline: none;
+  color: rgba(107, 83, 255, 1);
+  padding: 0 5% 0 5%;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(107, 83, 255, .6);
+}

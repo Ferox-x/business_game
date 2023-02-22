@@ -1,0 +1,34 @@
+[
+  {
+    "model": "authenticate.authuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$NBXXPxRIhDIQJxJqDLwpX1$uqX16vxEKYMz7OuMNC3+naimx5sNzGmhBz0vpi5qF6U=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "coordinator@gmail.com",
+      "created_at": "2023-02-02T14:37:21.398Z",
+      "updated_at": "2023-02-02T14:37:21.398Z",
+      "is_staff": false,
+      "role": 2,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authenticate.authuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$WYRk4TNEf0GTwMql0vWskk$SYGt2XIMHLgz6mzwXzn4kP+RAQfVRPkl15ANssoeHUM=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "player@gmail.com",
+      "created_at": "2023-02-02T14:38:00.780Z",
+      "updated_at": "2023-02-03T02:47:25.215Z",
+      "is_staff": false,
+      "role": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

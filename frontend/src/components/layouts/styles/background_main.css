@@ -1,0 +1,7 @@
+.main__background {
+  flex-basis: 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../../static/img/authorization/main_back.jpg");
+  background-position: center;
+  background-size: cover;
+}

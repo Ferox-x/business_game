@@ -1,0 +1,22 @@
+.user_attribute_list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 200px;
+  margin-bottom: 70px;
+}
+
+.coordinator_attribute_list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 230px;
+  max-height: 320px;
+  margin-bottom: 70px;
+}
+
+@media (min-width: 2500px) {
+  .user_attribute_list {
+    min-height: 500px;
+  }
+}

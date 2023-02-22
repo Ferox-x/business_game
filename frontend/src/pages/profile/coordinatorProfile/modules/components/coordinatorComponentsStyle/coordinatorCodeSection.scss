@@ -1,0 +1,45 @@
+.coordinator_code_section {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.coordinator_code_section_fill {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+  .coordinator_code_section {
+    height: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .coordinator_code_section {
+    display: none;
+  }
+  .coordinator_code_section_fill {
+    display: none;
+  }
+}
+
+
+@media (min-width: 2000px) {
+  .coordinator_code_section {
+    margin-top: 80px;
+    height: 60%;
+    margin-bottom: 200px;
+  }
+  .coordinator_code_section_fill {
+    height: 250px;
+  }
+}

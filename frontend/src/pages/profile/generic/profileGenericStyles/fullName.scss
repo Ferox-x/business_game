@@ -1,0 +1,21 @@
+@import "../../../../sass_library/library";
+
+
+.user_full_name {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  color: $black_fc;
+}
+
+@media (max-width: 530px) {
+  .user_full_name {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .user_full_name {
+    font-size: 30px;
+  }
+}

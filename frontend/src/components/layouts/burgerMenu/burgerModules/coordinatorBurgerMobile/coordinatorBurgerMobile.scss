@@ -1,0 +1,51 @@
+.burger_container_mobile {
+  width: 90%;
+  height: 60%;
+  background: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  padding: 5% 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.close_burger_menu {
+  background-image: url("../../../../../static/img/profile/close_popup.svg");
+  width: 74px;
+  height: 8px;
+  background-repeat: no-repeat;
+  margin: 0 auto 40px;
+  display: flex;
+}
+
+.button_create_game_mobile_container {
+  height: 16%;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.button_logout_mobile_container {
+  padding-left: 5%;
+}
+
+.join_mobile_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 180px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+  .burger_container_mobile {
+    padding: 5% 5% 10% 5%;
+    height: 70%;
+  }
+  .button_create_game_mobile_container {
+    width: 90%;
+  }
+}

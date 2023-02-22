@@ -1,0 +1,29 @@
+.form_auth-input-login {
+  min-height: 160px;
+  margin-bottom: 15px;
+}
+
+.container_login_right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 70px;
+}
+
+@media (min-height: 1000px) {
+  .auth_form {
+    width: 500px;
+  }
+  .form_auth-input-login {
+    min-height: 200px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .auth_form {
+    width: 600px;
+  }
+  .form_auth-input-login {
+    min-height: 250px;
+  }
+}

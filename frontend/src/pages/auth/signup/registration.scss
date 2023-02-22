@@ -1,0 +1,32 @@
+.form_auth-input-registration {
+  min-height: 300px;
+  margin-bottom: 37px;
+}
+
+
+@media (min-height: 1000px) {
+  .auth_form {
+    width: 500px;
+  }
+  .form_auth-input-registration {
+    min-height: 400px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .auth_form {
+    width: 600px;
+  }
+  .form_auth-input-registration {
+    min-height: 500px;
+  }
+}
+
+@media (max-height: 700px) {
+  .form_auth-input-registration {
+    min-height: 250px;
+  }
+  .logo_container {
+    margin-bottom: 40px;
+  }
+}

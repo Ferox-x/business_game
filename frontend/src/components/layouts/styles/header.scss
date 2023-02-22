@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  height: 144px;
+  align-items: center;
+}
+
+.header_purple {
+  background-color: rgba(182, 74, 255, 1);
+}
+
+@media (max-width: 530px) {
+  .header_container {
+    height: 79px;
+    flex-direction: row-reverse;
+  }
+  .header_logo_container {
+    height: 50px;
+    width: 80px;
+  }
+}

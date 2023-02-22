@@ -1,0 +1,12 @@
+.form_attributes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  justify-content: space-between;
+}
+
+@media (max-width: 540px) {
+  .form_attributes {
+    justify-content: center;
+  }
+}

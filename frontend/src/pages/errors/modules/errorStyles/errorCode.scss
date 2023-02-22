@@ -1,0 +1,13 @@
+.error_code {
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 120%;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+@media (max-width: 530px) {
+  .error_code {
+    font-size: 80px;
+  }
+}

@@ -1,0 +1,14 @@
+.idea
+README.md
+LICENSE
+.gitignore
+.editorconfig
+venv
+./frontend/node_modules
+./frontend/package-lock.json
+games
+docs
+__pycahce__
+
+.dockerignore
+README.md

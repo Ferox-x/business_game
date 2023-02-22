@@ -1,0 +1,85 @@
+version: '3.9'
+
+volumes:
+  pgdata:
+    driver: local
+  redis_data:
+    driver: local
+
+
+services:
+
+  react:
+    container_name: react
+    restart: always
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/srv/www/frontend
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    command: "npm start"
+
+  python:
+    container_name: python
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/srv/www/backend
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    command: "python manage.py runserver 0.0.0.0:8000"
+
+  pgadmin:
+    container_name: pgadmin
+    restart: always
+    image: dpage/pgadmin4:6.19
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgbouncer:
+    container_name: pgbouncer
+    image: edoburu/pgbouncer:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    depends_on:
+      - postgres
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    ports:
+      - "6379:6379"
+    volumes:
+      - 'redis_data:/bitnami/redis/data'

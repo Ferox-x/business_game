@@ -1,0 +1,71 @@
+.bs_input {
+  color: #FFFFFF;
+  height: 60px;
+  background: transparent;
+  opacity: 0.8;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 19px;
+  padding-left: 70px;
+  outline: none;
+  padding-right: 35px;
+}
+
+
+.bs_input_background {
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 35px;
+}
+
+.bs_input__email {
+  background-image: url("../../../static/img/authorization/email.svg");
+}
+
+.bs_input__password {
+  background-image: url("../../../static/img/authorization/password.svg");
+}
+
+.bs_input__password2 {
+  background-image: url("../../../static/img/authorization/password2.svg");
+}
+
+.bs_input__invite_code {
+  background-image: url("../../../static/img/authorization/invite_code.svg");
+}
+
+.bs_input::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+.bs_input::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+@media (max-width: 360px) {
+  .bs_input {
+    padding-left: 63px;
+    padding-right: 10%;
+  }
+
+}
+
+@media (min-height: 1000px) {
+  .bs_input {
+    height: 80px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .bs_input {
+    height: 100px;
+    font-size: 25px;
+  }
+}
+
+@media (max-height: 700px) {
+  .bs_input {
+    height: 55px;
+  }
+}

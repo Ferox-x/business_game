@@ -1,0 +1,12 @@
+.form_attribute_coordinator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 540px) {
+  .form_attribute_coordinator {
+    justify-content: center;
+  }
+}

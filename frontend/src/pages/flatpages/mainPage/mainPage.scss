@@ -1,0 +1,79 @@
+@import "../../../sass_library/library";
+
+.links_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 206px;
+}
+
+.link_auth {
+  display: flex;
+  border-radius: 100px;
+  font-size: 25px;
+  height: 75px;
+  width: 343px;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.link_registration {
+  color: $purple_fc;
+  background: $white_bc;
+  cursor: pointer;
+}
+
+.link_login {
+  color: $white_fc;
+  background: $purple_bc;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+}
+
+.title_container-main-page {
+  margin-bottom: 110px;
+}
+
+@media (max-width: 405px) {
+  .logo_container {
+    margin-bottom: 50px;
+  }
+  .title_container-main-page {
+    margin-bottom: 50px;
+  }
+  .links_container {
+    min-height: 180px;
+  }
+
+}
+
+@media (min-width: 390px) {
+  .title_container-main-page {
+    margin-bottom: 100px;
+  }
+  .links_container {
+    min-height: 200px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .links_container {
+    min-height: 250px;
+  }
+  .link_auth {
+    height: 80px;
+    min-width: 500px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .links_container {
+    min-height: 300px;
+  }
+  .link_auth {
+    height: 100px;
+    min-width: 600px;
+  }
+}

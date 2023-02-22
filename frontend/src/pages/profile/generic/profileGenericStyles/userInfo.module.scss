@@ -1,0 +1,77 @@
+@import "../../../../sass_library/library";
+
+.user_info {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 116px;
+}
+
+
+.user_name {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 29px;
+
+}
+
+.user_link_email {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+}
+
+.user_link_edit {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  text-decoration-line: underline;
+}
+
+.user_info__color_black {
+  color: black;
+}
+
+.user_info__color_purple {
+  color: $purple_fc;
+}
+
+.user_info__color_white {
+  color: $white_fc;
+}
+
+@media (max-width: 700px) {
+  .user_info {
+    width: 250px;
+    height: 20%;
+    margin-top: 50px;
+  }
+  .user_name {
+    font-size: 25px;
+  }
+  .user_link_email {
+    font-size: 16px;
+  }
+  .user_link_edit {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .user_info {
+    height: 150px;
+    margin-top: 50px;
+  }
+  .user_name {
+    font-size: 50px;
+  }
+  .user_link_email {
+    font-size: 40px;
+  }
+  .user_link_edit {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,12 @@
+.form_full_name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 540px) {
+  .form_full_name {
+    justify-content: center;
+  }
+}

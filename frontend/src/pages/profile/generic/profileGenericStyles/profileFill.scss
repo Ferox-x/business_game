@@ -1,0 +1,43 @@
+.user_profile_data {
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user_info_container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user_full_name_container {
+  margin-bottom: 55px;
+}
+
+
+@media (max-width: 700px) {
+  .user_profile_data {
+    padding: 0 10%;
+  }
+  .user_info_container {
+    margin-bottom: 44px;
+  }
+  .user_full_name_container {
+    width: 284px;
+  }
+  .user_attribute_container {
+  }
+}
+
+@media (min-width: 700px) {
+  .user_info_container {
+    margin-bottom: 55px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .user_full_name_container {
+    margin-bottom: 80px;
+  }
+}

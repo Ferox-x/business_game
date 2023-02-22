@@ -1,0 +1,70 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "GorhamPro";
+    src: local("GothamPro-Regular"), url("./fonts/GothamPro.woff2") format("woff2"),
+    url("./fonts/GothamPro.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.gradient {
+    display: flex;
+    width: 600px;
+    height: 700px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #BA49FF 0%, #4558FF 100%);
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    padding-top: 31px;
+    padding-bottom: 31px;
+}
+
+.header_logo {
+    background-image: url('./img/Logo.svg');
+    background-repeat: no-repeat;
+    width: 142px;
+    height: 66px;
+}
+
+.background__image {
+    background-image: url("./img/Image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+    width: 600px;
+    height: 334px;
+    margin-bottom: 38px;
+}
+
+.email__text {
+    font-family: 'GothamPro', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    width: 530px;
+    color: #FFFFFF;
+    margin-bottom: 38px;
+}
+
+.button_password {
+    font-family: 'GothamPro', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 100px;
+    width: 278px;
+    height: 47px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 15px;
+    color: rgba(107, 83, 255, 1);
+}
