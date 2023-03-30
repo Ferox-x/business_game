@@ -11,10 +11,10 @@ function BurgerNotMobile({ hide, burgerState, ...props }) {
 	let burgerStateClass
 
 	switch (burgerState) {
-		case 0:
+		case false:
 			burgerStateClass = "popup_hidden"
 			break
-		case 1:
+		case true:
 			burgerStateClass = "popup_open"
 			break
 	}
@@ -30,19 +30,21 @@ function BurgerNotMobile({ hide, burgerState, ...props }) {
 	}
 
 	return (
-		<div className={"burger " + burgerStateClass}>
-			<div className={"burger_container"}>
-				<button className="menu_burger btn-reset burger_active">
-					<img
-						onClick={hide}
-						src={burger_active}
-						alt="Menu"
-						className={"menu_burger_icon"}
-					/>
-				</button>
-				{children}
+		<>
+			<div className={"burger " + burgerStateClass}>
+				<div className={"burger_container"}>
+					<button className="menu_burger btn-reset burger_active">
+						<img
+							onClick={hide}
+							src={burger_active}
+							alt="Menu"
+							className={"menu_burger_icon"}
+						/>
+					</button>
+					{children}
+				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 

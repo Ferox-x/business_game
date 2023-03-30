@@ -1,29 +1,36 @@
+@import "../../../../sass_library/library.scss";
+
 .form_label_start_game {
-  width: 475px;
-  display: flex;
-  flex-direction: column;
-  font-weight: 400;
+  width: 100%;
+  @extend %flex_column;
+  @extend %text_decoration;
   font-size: 16px;
-  line-height: 15px;
   color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
-}
+  margin-bottom: 40px;
 
-.start_game_input {
-  margin-top: 10px;
-  padding: 24px 30px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-  outline: none;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 19px;
-  color: #6B53FF;
-}
+  &__input {
+    @extend %text_decoration;
+    width: calc(100% - 60px);
+    margin-top: 10px;
+    padding: 24px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: $border_radius;
+    outline: none;
+    color: rgba(66, 74, 157, 1);
 
-.start_game_input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 19px;
+    @media (max-width: 500px) {
+      padding: 16px 22px;
+      font-size: 18px;
+    }
+     @media (max-width: 360px) {
+      padding: 16px 22px;
+      font-size: 14px;
+    }
+
+
+    ::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.8);
+      @extend %text_decoration;
+    }
+  }
 }

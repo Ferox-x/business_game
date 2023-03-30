@@ -24,10 +24,17 @@
 }
 
 .link_coordinator_value {
-  color: rgba(107, 83, 255, .6);
+  min-width: 100px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgba(66, 74, 157, .6);
   font-weight: 400;
   font-size: 25px;
   line-height: 24px;
+  &:hover {
+    color: rgba(66, 74, 157, 1);
+  }
 }
 
 .link_coordinator_enter {
@@ -39,7 +46,7 @@
 }
 
 .link_coordinator_container:hover {
-  background: rgba(107, 83, 255, 0.1);
+  background: rgba(66, 74, 157, 0.1);
 }
 
 .link_coordinator_enter:hover {
@@ -63,5 +70,17 @@
 @media (max-width: 320px) {
   .link_coordinator_value {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .link_coordinator_value {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 290px) {
+  .link_coordinator_value {
+    max-width: 100px;
   }
 }

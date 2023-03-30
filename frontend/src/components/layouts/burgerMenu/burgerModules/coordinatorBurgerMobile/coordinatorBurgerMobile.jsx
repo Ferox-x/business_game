@@ -1,9 +1,9 @@
 import React from "react"
 import "./coordinatorBurgerMobile.scss"
 import "../burgerStyles/buttonCreateGame.css"
-import ButtonCreateGame from "../modules/buttonCreateGame"
 import LinksBurgerCoordinator from "../modules/linksBurgerCoordinator"
 import ButtonLogout from "../modules/buttonLogout"
+import ButtonPurple from "../../../../UI-UX/button_purple"
 
 function CoordinatorBurgerMobile({ hide, ...props }) {
 	return (
@@ -12,7 +12,7 @@ function CoordinatorBurgerMobile({ hide, ...props }) {
 				<button className="btn_reset close_burger_menu"></button>
 			</div>
 			<div className="button_create_game_mobile_container">
-				<ButtonCreateGame />
+				<ButtonPurple children={"Создать игру"} />
 			</div>
 			<div className="links_burger_coordinator_container">
 				<LinksBurgerCoordinator />

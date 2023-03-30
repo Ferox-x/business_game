@@ -1,37 +1,27 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import "./coordinatorComponentsStyle/coordinatorCodeSection.scss"
-import CoordinatorCode from "./coordinatorCode"
-import CoordinatorUrl from "./coordinatorUrl"
 import { CoordinatorInfo } from "../../../api/coordinatorProfileApi"
 import { useDispatch } from "react-redux"
+import CodeSection from "../codeSection/codeSection"
 
-function CoordinatorCodeSectionFill(props) {
+function CoordinatorCodeSectionFill({ ...props }) {
 	const dispatch = useDispatch()
 
-	const [inviteCode, setInviteCode] = useState("")
+	const coordinatorInfo = new CoordinatorInfo(dispatch)
 
 	function getCode() {
-		new CoordinatorInfo(dispatch).getInviteCode().then((response) => {
-			setInviteCode(response.data.invite_code)
+		return coordinatorInfo.getInviteCode().then((response) => {
+			return response
 		})
 	}
 
 	function updateInviteCode() {
-		new CoordinatorInfo(dispatch).updateInviteCode().then((response) => {
-			setInviteCode(response.data.invite_code)
+		return coordinatorInfo.updateInviteCode().then((response) => {
+			return response
 		})
 	}
 
-	useEffect(() => {
-		getCode()
-	}, [])
-
-	return (
-		<div className={"coordinator_code_section_fill"}>
-			<CoordinatorCode code={inviteCode} update={updateInviteCode} />
-			<CoordinatorUrl code={inviteCode} />
-		</div>
-	)
+	return <CodeSection getCode={getCode} updateCode={updateInviteCode} />
 }
 
 export default CoordinatorCodeSectionFill

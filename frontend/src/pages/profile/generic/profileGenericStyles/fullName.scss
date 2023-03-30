@@ -2,10 +2,18 @@
 
 
 .user_full_name {
+  @extend %text_container;
   font-weight: 400;
   font-size: 20px;
   line-height: 19px;
   color: $black_fc;
+
+  @media (max-width: 1000px) {
+    max-width: 500px;
+  }
+  @media (max-width: 370px) {
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 530px) {

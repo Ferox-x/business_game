@@ -40,3 +40,21 @@ export function RequireAuthCoordinator({ children, ...props }) {
 	}
 	return <Error403 />
 }
+
+export function useCheckPLayer(children) {
+	let user = useSelector((state) => state.user)
+
+	if (user.isPlayer) {
+		return true
+	}
+	return false
+}
+
+export function useCheckCoordinator(children) {
+	let user = useSelector((state) => state.user)
+
+	if (user.isCoordinator) {
+		return true
+	}
+	return false
+}

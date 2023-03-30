@@ -1,19 +1,18 @@
+@import "../../../../../sass_library/library.scss";
+
 .input_join_game {
-  display: flex;
-  justify-content: center;
-  height: 68px;
-  width: 80%;
-  border: 1px solid #6B53FF;
-  border-radius: 20px;
-  text-align: center;
-  font-weight: 400;
+  @extend %justify_center;
+  @extend %text_decoration;
+  border-radius: $border_radius;
+  height: calc(68px - 24px*2);
+  width: calc(100% - 60px);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 18px;
-  line-height: 17px;
   outline: none;
-  color: rgba(107, 83, 255, 1);
-  padding: 0 5% 0 5%;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 24px 30px;
 }
 
-input::-webkit-input-placeholder {
-  color: rgba(107, 83, 255, .6);
+.input_join_game::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }

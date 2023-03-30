@@ -1,16 +1,15 @@
+@import "../../../../../sass_library/library.scss";
+
 .modal_coordinator_code_field {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @extend %between_row;
+  @extend %text_decoration;
   align-items: center;
-  border: 1px solid #6B53FF;
+  border: 1px solid #424A9D;;
   border-radius: 20px;
   background-color: #FFFFFF;
   padding: 0 30px;
   height: 55px;
   width: 100%;
-  font-size: 20px;
-  line-height: 19px;
   color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
 }

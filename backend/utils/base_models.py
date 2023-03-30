@@ -13,7 +13,14 @@ class BaseUserModel(models.Model):
 
     def get_full_name(self):
         """Преобразует имя и фамилию в одну строку."""
-        return f"{self.last_name} {self.first_name} {self.patronymic}"
+        if self.last_name and self.first_name and self.patronymic:
+            return f"{self.last_name} {self.first_name} {self.patronymic}"
+        return ""
+
+    def get_last_name_and_first_name(self):
+        if self.last_name and self.first_name:
+            return f"{self.last_name} {self.first_name}"
+        return self.email
 
     class Meta:
         """Мета класс."""

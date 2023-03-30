@@ -41,13 +41,19 @@ export default function userReducer(state = defaultState, action) {
 			localStorage.setItem("userState", JSON.stringify(playerState))
 			return playerState
 
+		case "SET_PLAYER_ATTRIBUTES":
+			const playerStateAttributes = {
+				...state,
+				attributes: { ...action.payload },
+			}
+			localStorage.setItem("userState", JSON.stringify(playerStateAttributes))
+			return playerStateAttributes
+
 		case "CLEAR_USER":
-			console.log("CLEAR_USER")
 			localStorage.removeItem("userState")
 			return defaultState
 
 		default:
-			console.log("default")
 			const userState = localStorage.getItem("userState")
 			if (userState) {
 				return JSON.parse(userState)

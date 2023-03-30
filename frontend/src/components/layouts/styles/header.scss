@@ -7,12 +7,38 @@
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  height: 144px;
+  height: 100px;
   align-items: center;
+
+  &__game {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &_title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 29px;
+      color: #FFFFFF;
+      margin-right: 60px;
+    }
+
+    &_chat {
+      background-image: url("../../../static/img/header/chat.svg");
+      width: 50px;
+      height: 50px;
+    }
+    &_back {
+      background-image: url("../../../static/img/back_white.svg");
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 
 .header_purple {
-  background-color: rgba(182, 74, 255, 1);
+  background-color: rgba(66, 74, 157, 1);
 }
 
 @media (max-width: 530px) {

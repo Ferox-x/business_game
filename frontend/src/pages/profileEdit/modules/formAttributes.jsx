@@ -5,15 +5,12 @@ import InvisibleLabel from "./invisibleLabel"
 import FormLabelAttribute from "../components/formLabelAttribute"
 import Loads from "../../profile/loads/loads"
 import { PlayerProfileApi } from "../api/playerEditApi"
-import { useDispatch } from "react-redux"
-import { PlayerInfo } from "../../profile/api/playerProfileApi"
 
 function FormAttributes({ attributesAndValue, setAttributesAndValue, ...props }) {
 	const [attributes, setAttributes] = useState([false])
-	const dispatch = useDispatch()
 
 	useEffect(() => {
-		new PlayerProfileApi(dispatch).getAttributes().then((attributes) => {
+		new PlayerProfileApi().getAttributes().then((attributes) => {
 			setAttributes(attributes)
 		})
 	}, [])

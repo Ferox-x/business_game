@@ -1,16 +1,174 @@
 // main
 
-$gradient_bg: linear-gradient(180deg, #B64AFF -10.94%, #4757FF 100%);
 
 // font
 
 $desktop_input_fz: 20px;
 $white_fc: #FFFFFF;
 $black_fc: #000000;
-$purple_fc: #6B53FF;
+$purple_fc: #424A9D;
 $font_family: "Gotham Pro", sans-serif;
+
+// background
+
+$back_white: #FFFFFF;
 
 // button
 
 $white_bc: #FFFFFF;
-$purple_bc: #6B53FF;
+$purple_bc: rgba(66, 74, 157, 1);
+$border_radius: 20px;
+
+%button_purple {
+  background: $purple_bc;
+  border-radius: $border_radius;
+  @extend %text_decoration;
+  font-size: 25px;
+  color: $white_fc;
+  border: none;
+  cursor: pointer;
+}
+
+%button_white {
+  color: $purple_fc;
+  background: $white_bc;
+  border-radius: $border_radius;
+  @extend %text_decoration;
+  font-size: 18px;
+  border: 1px solid #6B53FF;
+  cursor: pointer;
+}
+
+// pages
+
+%business_game_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+%space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%text_decoration {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+%align_center {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+%flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex_end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+%input_decoration {
+  font-size: 18px;
+  outline: #6B53FF;
+  color: $purple_fc;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: $border_radius;
+
+}
+
+%align_flex_end {
+  display: flex;
+  align-items: flex-end;
+}
+
+%justify_center {
+  display: flex;
+  justify-content: center;
+}
+
+%between_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+%between_row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+%between_column {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+%role_form {
+  @extend %business_game_container;
+  width: 100%;
+  padding: 30px 0 30px;
+  height: 100%;
+  justify-content: initial;
+}
+
+%textarea_reset {
+  border: none;
+  overflow: hidden;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}
+
+%chat_message_text {
+  @extend %text_decoration;
+  padding-left: 30px;
+  font-size: 16px;
+  max-width: 400px;
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+%chat_message_time {
+  padding-right: 30px;
+  @extend %text_decoration;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+%chat_message_container {
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  background: rgba(107, 83, 255, 0.05);
+  border-radius: $border_radius;
+  margin-bottom: 15px;
+}
+
+%table_container {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 46px;
+}
+
+%text_container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

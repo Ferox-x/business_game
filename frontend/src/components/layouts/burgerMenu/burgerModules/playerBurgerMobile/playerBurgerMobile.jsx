@@ -7,6 +7,7 @@ import "../coordinatorBurgerMobile/coordinatorBurgerMobile.scss"
 import LinksBurgerPlayer from "../modules/linksBurgerPlayer"
 import PlayerInputJoinGame from "../modules/playerInputJoinGame"
 import PlayerButtonJoinCode from "../modules/playerButtonJoinCode"
+import ButtonPurple from "../../../../UI-UX/button_purple"
 
 function PlayerBurgerMobile(props) {
 	return (
@@ -16,7 +17,9 @@ function PlayerBurgerMobile(props) {
 			</div>
 			<div className="join_mobile_container">
 				<PlayerInputJoinGame />
-				<PlayerButtonJoinCode children={"Присоединиться"} />
+				<div className="join_mobile_container__btn">
+					<ButtonPurple children={"Присоединиться"} />
+				</div>
 			</div>
 			<div className="links_burger_coordinator_container">
 				<LinksBurgerPlayer />

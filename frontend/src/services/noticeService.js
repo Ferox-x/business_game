@@ -1,3 +1,15 @@
+class Counter {
+	static counter_id = 1
+
+	static increaseCounter() {
+		Counter.counter_id++
+	}
+
+	static getCounter() {
+		return Counter.counter_id
+	}
+}
+
 export class NoticeService {
 	#infoStatus = "info"
 	#errorStatus = "error"
@@ -14,12 +26,14 @@ export class NoticeService {
 	}
 
 	addInfoNotice(message) {
-		const notice = NoticeService.#createNoticeObject(1, message, this.#infoStatus)
+		Counter.increaseCounter()
+		const notice = this.createNoticeObject(message, this.#infoStatus)
 		this.#addNotice(notice)
 	}
 
 	addErrorNotice(message) {
-		const notice = NoticeService.#createNoticeObject(1, message, this.#errorStatus)
+		Counter.increaseCounter()
+		const notice = this.createNoticeObject(message, this.#errorStatus)
 		this.#addNotice(notice)
 	}
 
@@ -33,9 +47,9 @@ export class NoticeService {
 		}, 5000)
 	}
 
-	static #createNoticeObject(id, message, status) {
+	createNoticeObject(message, status) {
 		return {
-			id: id,
+			id: Counter.getCounter(),
 			message: message,
 			status: status,
 		}

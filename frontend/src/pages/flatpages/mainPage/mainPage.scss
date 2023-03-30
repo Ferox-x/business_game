@@ -27,7 +27,7 @@
 
 .link_login {
   color: $white_fc;
-  background: $purple_bc;
+  background: transparent;
   border: 1px solid #FFFFFF;
   cursor: pointer;
 }
@@ -75,5 +75,12 @@
   .link_auth {
     height: 100px;
     min-width: 600px;
+  }
+}
+
+@media (max-width: 360px) {
+  .link_auth {
+    height: 70px;
+    width: 250px;
   }
 }

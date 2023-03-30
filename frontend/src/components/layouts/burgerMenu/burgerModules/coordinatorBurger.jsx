@@ -3,6 +3,7 @@ import "./burgerStyles/coordinatorBurger.scss"
 import LinksBurgerCoordinator from "./modules/linksBurgerCoordinator"
 import ButtonLogout from "./modules/buttonLogout"
 import ButtonCreateGame from "./modules/buttonCreateGame"
+import ButtonPurple from "../../../UI-UX/button_purple"
 
 function CoordinatorBurger(props) {
 	return (
@@ -13,7 +14,7 @@ function CoordinatorBurger(props) {
 					<ButtonLogout />
 				</div>
 				<div className="button_create_game_container">
-					<ButtonCreateGame children={"Создать игру"} />
+					<ButtonPurple children={"Создать игру"} />
 				</div>
 			</div>
 		</>

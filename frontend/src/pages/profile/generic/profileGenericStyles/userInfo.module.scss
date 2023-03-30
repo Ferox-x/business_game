@@ -11,9 +11,14 @@
 
 
 .user_name {
+  @extend %text_container;
   font-weight: 400;
   font-size: 30px;
   line-height: 29px;
+
+  @media (max-width: 450px) {
+    max-width: 200px;
+  }
 
 }
 
@@ -25,6 +30,7 @@
 }
 
 .user_link_edit {
+  cursor: pointer;
   font-weight: 400;
   font-size: 20px;
   line-height: 19px;
@@ -73,5 +79,19 @@
   }
   .user_link_edit {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .user_name {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  .user_link_email {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  .user_link_edit {
+    text-align: right;
   }
 }

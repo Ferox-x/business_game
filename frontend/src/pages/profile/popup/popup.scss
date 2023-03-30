@@ -30,6 +30,10 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
+
+  &:hover {
+    background-image: url("../../../static/img/modal/close_invite_active.svg");
+  }
 }
 
 .popup_coordinator_body {

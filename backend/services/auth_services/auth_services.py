@@ -1,43 +1,4 @@
-import random
-import string
-
 from django.apps import apps
-from django.core.exceptions import ObjectDoesNotExist
-
-from services.cache.cache import RedisCacheMethods
-
-
-class InviteCodeMethods:
-    """Класс методов для инвайт кода."""
-
-    @staticmethod
-    def get_coordinator_id_by_invite_code(invite_code: str):
-        """Метод для получения ID координатора по инвайт коду."""
-        is_invite_code_valid = RedisCacheMethods.get_invite_code(invite_code)
-        if not is_invite_code_valid:
-            try:
-                coordinator = apps.get_model("users.Coordinator")
-                coordinator.objects.get(invite_code=invite_code)
-                RedisCacheMethods.set_invite_code(invite_code)
-            except ObjectDoesNotExist:
-                return None
-        coordinator_id = int(invite_code.split("-")[0])
-        return coordinator_id
-
-    @staticmethod
-    def generate_invite_code(coordinator_id: int) -> str:
-        """Метод генерации инвайт кодаю.
-
-        :param coordinator_id:
-        :return:
-        """
-        id_string = str(coordinator_id)
-        id_string_len = len(id_string)
-        random_part = "".join(
-            [random.choice(string.ascii_letters) for _ in range(9 - id_string_len)]
-        )
-        invite_code = "-".join((id_string, random_part))
-        return invite_code
 
 
 class AuthRoles:

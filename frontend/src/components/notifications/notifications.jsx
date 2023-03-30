@@ -8,11 +8,11 @@ function Notifications(props) {
 
 	return (
 		<div className="notifications_container">
-			{notifications.map((notice, index) => {
+			{notifications.map((notice) => {
 				return (
 					<Notification
-						key={index}
-						id={index}
+						key={notice.id}
+						id={notice.id}
 						message={notice.message}
 						status={notice.status}
 					/>

@@ -1,35 +1,34 @@
+@import "../../../../../../sass_library/library.scss";
+
 .invite_button_container {
   display: none;
-  height: 15%;
-  padding: 0 20px;
   margin-bottom: 30px;
-  }
+  height: 100%;
+}
 
 .invite_button_mobile {
-  background: #6B53FF;
+  @extend %button_purple;
   border-radius: 100px;
-  color: #FFFFFF;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 24px;
   width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-@media (max-width: 530px) {
-  .invite_button_mobile {
-    font-size: 15px;
-    height: 40px;
-  }
-}
+
 
 @media (max-width: 1000px) {
   .invite_button_container {
     display: flex;
     justify-content: center;
   }
-  .invite_button_mobile {
-    font-size: 18px;
-    height: 50px;
-  }
 
+}
+
+@media (max-width: 320px) {
+  .invite_button_container {
+    padding: 0 1px;
+  }
+  .invite_button_mobile {
+    font-size: 16px;
+  }
 }

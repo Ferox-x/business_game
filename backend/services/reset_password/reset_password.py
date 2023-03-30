@@ -37,7 +37,13 @@ class ResetPassword:
         :param token:
         :return: bool.
         """
-        pk = PasswordResetToken().decode_token(token).get("id")
+        payload = PasswordResetToken().decode_token(token)
+
+        if not PasswordResetToken().check_token_type(payload):
+            message = "Неверный тип токена."
+            return False, message
+
+        pk = payload.get("id")
         token_redis = RedisCacheMethods.get_reset_password_token(pk)
         if token_redis and (token_redis != token):
             return False, "Не валидный токен"

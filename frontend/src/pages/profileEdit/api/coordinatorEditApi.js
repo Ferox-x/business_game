@@ -1,5 +1,5 @@
 import { getAxiosInstanceAuth } from "../../../actions/axios_config"
-import { ChangePassword, NoticeApiBase } from "../../../utilits/baseApiClasses"
+import { NoticeApiBase } from "../../../utilits/baseApiClasses"
 
 export class CoordinatorEditApi extends NoticeApiBase {
 	sendForm(data) {

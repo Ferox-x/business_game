@@ -2,21 +2,17 @@ import React, { useState } from "react"
 import "../generic/genericEditStyles/formPassword.scss"
 import FormButton from "../generic/formButton"
 import FormLabelPassword from "../components/formLabelPassword"
-import { ChangePassword } from "../../../utilits/baseApiClasses"
-import { useDispatch } from "react-redux"
 
 function FormPassword(props) {
 	const [oldPassword, setOldPassword] = useState("")
 	const [newPassword, setNewPassword] = useState("")
 	const [newPassword2, setNewPassword2] = useState("")
 
-	const dispatch = useDispatch()
-
 	function sendNewPassword() {
-		new ChangePassword(dispatch).changePassword({
-			old_password: oldPassword,
-			new_password: newPassword,
-			new_password2: newPassword2,
+		console.log({
+			oldPassword,
+			newPassword,
+			newPassword2,
 		})
 	}
 

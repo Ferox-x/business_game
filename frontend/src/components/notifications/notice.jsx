@@ -25,7 +25,7 @@ function Notification({ message, id, status, ...props }) {
 			<div className={"notice__content " + color}>{message}</div>
 			<div
 				onClick={() => {
-					new NoticeService(dispatch).deleteNotice(1)
+					new NoticeService(dispatch).deleteNotice(id)
 				}}
 				className={"notice__content-icon " + colorIcon}
 			></div>

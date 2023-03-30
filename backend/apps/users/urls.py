@@ -12,6 +12,22 @@ urlpatterns = [
         ),
     ),
     path(
+        "api/coordinator/players/<int:page>",
+        CoordinatorViewSet.as_view(
+            {
+                "get": "get_coordinator_players",
+            }
+        ),
+    ),
+    path(
+        "api/coordinator/games/<int:page>",
+        CoordinatorViewSet.as_view(
+            {
+                "get": "get_coordinator_games",
+            }
+        ),
+    ),
+    path(
         "api/coordinator/retrieve",
         CoordinatorViewSet.as_view(
             {
@@ -25,7 +41,16 @@ urlpatterns = [
         CoordinatorViewSet.as_view(
             {
                 "get": "get_attributes",
-                "post": "set_attributes",
+                "post": "add_new_attribute",
+                "put": "set_attributes",
+            }
+        ),
+    ),
+    path(
+        "api/coordinator/all-attributes",
+        CoordinatorViewSet.as_view(
+            {
+                "get": "get_all_attributes",
             }
         ),
     ),
@@ -39,19 +64,19 @@ urlpatterns = [
         ),
     ),
     path(
-        "api/coordinator/players",
-        CoordinatorViewSet.as_view(
-            {
-                "get": "get_coordinator_players",
-            }
-        ),
-    ),
-    path(
         "api/player/retrieve",
         PlayerViewSet.as_view(
             {
                 "get": "retrieve",
                 "post": "partial_update",
+            }
+        ),
+    ),
+    path(
+        "api/player/games/<int:page>",
+        PlayerViewSet.as_view(
+            {
+                "get": "get_player_games",
             }
         ),
     ),

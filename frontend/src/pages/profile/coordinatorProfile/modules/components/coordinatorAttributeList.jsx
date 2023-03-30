@@ -4,7 +4,7 @@ import CoordinatorAttribute from "./coordinatorAttribute"
 
 function CoordinatorAttributeList({ attributes, ...props }) {
 	return (
-		<div className={"coordinator_attribute_list"}>
+		<div className={"attribute_list"}>
 			{attributes.map((attribute, index) => {
 				return <CoordinatorAttribute key={index} attribute={attribute} />
 			})}

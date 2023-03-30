@@ -8,11 +8,13 @@
   font-weight: 400;
   font-size: 25px;
   line-height: 24px;
-  color: #6B53FF;
+  color: rgba(66, 74, 157, 1);
+;
 }
 
-@media (max-width: 50px) {
+@media (max-width: 500px) {
   .edit_top {
-    padding-bottom: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }

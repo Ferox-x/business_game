@@ -1,10 +1,7 @@
 import { getAxiosInstanceAuth } from "../../../actions/axios_config"
+import { NoticeApiBase } from "../../../utilits/baseApiClasses"
 
-export class CreateGameApi {
-	constructor(dispatch) {
-		this.dispatch = dispatch
-	}
-
+export class CreateGameApi extends NoticeApiBase {
 	async getCoordinatorAttributes() {
 		const axiosInstanceAuth = getAxiosInstanceAuth()
 
@@ -18,6 +15,8 @@ export class CreateGameApi {
 	async postCreateGame(data) {
 		const axiosInstanceAuth = getAxiosInstanceAuth()
 
-		return await axiosInstanceAuth.post("api/game/start", { data })
+		return await axiosInstanceAuth.post("api/game/start", { ...data }).then(() => {
+			this.createNoticeSuccess("Игра успешно создана")
+		})
 	}
 }

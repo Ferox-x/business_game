@@ -4,8 +4,9 @@ import jwt
 from django.contrib.auth import authenticate, get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import serializers
-from services.auth_services.auth_services import AuthRoles, InviteCodeMethods
+from services.auth_services.auth_services import AuthRoles
 from services.auth_services.generate_tokens import AccessToken, RefreshToken
+from services.invite_code import InviteCodeMethods
 from services.validators.custom_validators import CustomValidatorsMethods
 from utils.serialize_errors import ErrorsSerializer
 
@@ -158,8 +159,13 @@ class RefreshSerializer(serializers.Serializer):
             payload = RefreshToken().decode_token(refresh_token)
         except jwt.ExpiredSignatureError:
             errors.append(
-                "Срок действия токена обновления истек, пожалуйста, войдите снова."
+                "timeline действия токена обновления истек,"
+                " пожалуйста, войдите снова."
             )
+            raise serializers.ValidationError(errors)
+
+        if not RefreshToken().check_token_type(payload):
+            errors.append("Неверный тип токена.")
             raise serializers.ValidationError(errors)
 
         try:
@@ -208,7 +214,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
     password2 = serializers.CharField(allow_null=True)
 
     def validate(self, data):
-        """Проверка паролей на соответсвие.
+        """Проверка паролей на соответствие.
 
         :param data:
         :return:

@@ -15,7 +15,9 @@ function Burger({ burgerState, hide }) {
 	return (
 		<>
 			{width > 700 ? (
-				<BurgerNotMobile burgerState={burgerState} hide={hide} />
+				<>
+					<BurgerNotMobile burgerState={burgerState} hide={hide} />
+				</>
 			) : (
 				<BurgerMobile burgerState={burgerState} hide={hide} />
 			)}

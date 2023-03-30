@@ -1,19 +1,16 @@
+@import "../../../../../../sass_library/library.scss";
+
 .coordinator_code_section {
-  display: flex;
-  flex-direction: column;
+  @extend %between_column;
   height: 80%;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: 50px;
 }
 
 .coordinator_code_section_fill {
-  display: flex;
-  flex-direction: column;
+  @extend %between_column;
   height: 150px;
-  justify-content: space-between;
   width: 100%;
-  margin-bottom: 60px;
 }
 
 @media (max-width: 1024px) {

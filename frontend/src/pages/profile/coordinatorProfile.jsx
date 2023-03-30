@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import CoordinatorWithOutData from "./coordinatorProfile/modules/CoordinatorWithOutData/coordinatorWithOutData"
 import CoordinatorWithData from "./coordinatorProfile/modules/coordinatorWithData/coordinatorWithData"
@@ -7,13 +7,14 @@ import { CoordinatorInfo } from "./api/coordinatorProfileApi"
 
 function CoordinatorProfile(props) {
 	const dispatch = useDispatch()
-	const user = useSelector((state) => state.user.user)
 
-	function getData() {
-		const company = user.company
-		const jobTitle = user.job_title
-		const birthday = user.birthday
-		const phoneNumber = user.phone_number
+	const [data, setData] = useState([])
+
+	function getData(data) {
+		const company = data.company
+		const jobTitle = data.job_title
+		const birthday = data.birthday
+		const phoneNumber = data.phone_number
 
 		if (!company || !jobTitle || !birthday || !phoneNumber) {
 			return false
@@ -28,18 +29,17 @@ function CoordinatorProfile(props) {
 		}
 	}
 
-	useEffect(() => {
-		new CoordinatorInfo(dispatch).getCoordinatorInfo()
-		getData()
-	}, [])
-
-	const [data, setData] = useState(null)
-
 	const without_data = <CoordinatorWithOutData />
 
 	const with_data = <CoordinatorWithData data={data} />
 
-	return <>{data ? with_data : without_data}</>
+	useEffect(() => {
+		new CoordinatorInfo(dispatch).getCoordinatorInfo().then((response) => {
+			getData(response.data)
+		})
+	}, [])
+
+	return <>{data !== [] ? with_data : without_data}</>
 }
 
 export default CoordinatorProfile

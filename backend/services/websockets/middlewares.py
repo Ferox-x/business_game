@@ -31,7 +31,7 @@ class TokenAuthMiddleware:
 
     async def __call__(self, scope, receive, send):
         """Метод вызова."""
-        token = self._header_token(scope["headers"])
+        token = scope["query_string"][6:].decode("UTF-8")
 
         try:
             payload = AccessToken().decode_token(token)

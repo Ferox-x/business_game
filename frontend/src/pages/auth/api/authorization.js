@@ -42,7 +42,9 @@ class Authentication extends NoticeApiBase {
 
 	async refreshToken(redirect) {
 		const refreshToken = localStorage.getItem("refreshToken")
-
+		if (!refreshToken) {
+			return null
+		}
 		return await axiosRefresh
 			.post("api/refresh/", { refreshToken })
 			.then((response) => {
@@ -79,7 +81,6 @@ class Authentication extends NoticeApiBase {
 			})
 			.catch((response) => {
 				const errors = response.response.data.errors
-				console.log(errors)
 				this.createNoticeError(errors)
 				return response
 			})

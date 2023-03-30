@@ -3,6 +3,8 @@ from pathlib import Path
 
 from dotenv import dotenv_values, load_dotenv
 
+from django.utils.translation import gettext_lazy as _
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
@@ -119,7 +121,16 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "bgames.supp@gmail.com"
 EMAIL_HOST_PASSWORD = "axpwukzrjchryhgz"
 
-LANGUAGE_CODE = "ru-ru"
+PHONENUMBER_DEFAULT_REGION = "RU"
+
+LANGUAGES = (
+    ("en", _("English")),
+    ("ru", _("Russian")),
+)
+
+LANGUAGE_CODE = "ru-RU"
+
+LOCALE_PATHS = (path.join(BASE_DIR, "locale"),)
 
 TIME_ZONE = "UTC"
 

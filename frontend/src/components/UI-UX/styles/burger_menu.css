@@ -5,6 +5,7 @@
     cursor: pointer;
 }
 
+
 @media (max-width: 540px) {
   .menu_burger_icon {
     height: 20px;

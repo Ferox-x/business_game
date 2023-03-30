@@ -17,6 +17,7 @@ class JWTTokensBase(ABC):
 
     _SECRET_KEY = settings.SECRET_KEY
     life_time = 0
+    token_type = ""
 
     def decode_token(self, token):
         """Метод декодирования токена."""
@@ -55,11 +56,20 @@ class JWTTokensBase(ABC):
         в kwargs.
         """
 
+    def check_token_type(self, payload: dict):
+        """Метод проверяющий тип токена, на вход принимает нагрузку токена."""
+        token_type = payload.get("type", False)
+
+        if token_type and token_type == self.token_type:
+            return True
+        return False
+
 
 class AccessToken(JWTTokensBase):
     """Класс access токена."""
 
-    life_time = 10
+    life_time = 1000
+    token_type = "access"
 
     def generate_token(self, user_id, user_role_id):
         """Генерирует токен."""
@@ -71,13 +81,14 @@ class AccessToken(JWTTokensBase):
         user_id = kwargs.get("user_id")
         user_role_id = kwargs.get("user_role_id")
 
-        return {"id": user_id, "role": user_role_id}
+        return {"id": user_id, "role": user_role_id, "type": cls.token_type}
 
 
 class RefreshToken(JWTTokensBase):
     """Класс refresh токена."""
 
     life_time = 60 * 24
+    token_type = "refresh"
 
     def generate_token(self, user_id):
         """Генерирует токен."""
@@ -88,13 +99,14 @@ class RefreshToken(JWTTokensBase):
         """Переопределить, получение payload для нового токен."""
         user_id = kwargs.get("user_id")
 
-        return {"id": user_id, "refresh": "True"}
+        return {"id": user_id, "type": cls.token_type}
 
 
 class PasswordResetToken(JWTTokensBase):
     """Класс password reset токена."""
 
     life_time = 25
+    token_type = "password_reset"
 
     def generate_token(self, user_id):
         """Генерирует токен."""
@@ -104,4 +116,4 @@ class PasswordResetToken(JWTTokensBase):
     def _get_payload_token(cls, kwargs) -> dict:
         user_id = kwargs.get("user_id")
 
-        return {"id": user_id, "reset_password": "True"}
+        return {"id": user_id, "type": cls.token_type}

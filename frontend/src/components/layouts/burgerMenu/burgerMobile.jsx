@@ -10,10 +10,10 @@ function BurgerMobile({ burgerState, hide }) {
 	let burgerStateClass
 
 	switch (burgerState) {
-		case 0:
+		case false:
 			burgerStateClass = "popup_hidden"
 			break
-		case 1:
+		case true:
 			burgerStateClass = "popup_open"
 			break
 	}

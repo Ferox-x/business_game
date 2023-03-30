@@ -15,6 +15,7 @@ function FormLabelAttribute({
 		let newObjectAttributesAndValue = { ...attributesAndValue }
 		newObjectAttributesAndValue[htmlFor] = event.target.value
 		setAttributesAndValue(newObjectAttributesAndValue)
+		console.log(attributesAndValue)
 	}
 
 	return (

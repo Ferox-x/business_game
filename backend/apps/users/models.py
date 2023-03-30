@@ -5,7 +5,8 @@ from django.db import models
 from django.db.models.manager import BaseManager
 from phonenumber_field.modelfields import PhoneNumberField
 from rest_framework.exceptions import ValidationError
-from services.auth_services.auth_services import AuthRoles, InviteCodeMethods
+from services.auth_services.auth_services import AuthRoles
+from services.invite_code import InviteCodeMethods
 from utils.base_models import BaseUserModel
 
 from apps.authenticate.models import AuthUser
@@ -44,22 +45,31 @@ class AttributeAndValueManagerManger(BaseManager):
     @staticmethod
     def set(attributes_and_value: dict, user_id: int, coordinator_attrs):
         """Метод создаёт или обновляет строку из модели AttributeAndValue."""
-        keys_int = list(map(int, [*attributes_and_value.keys()]))
-
-        if keys_int == [attribute.id for attribute in coordinator_attrs]:
-            attributes = AttributeAndValue.objects.filter(
+        new_attributes = list(map(int, [*attributes_and_value.keys()]))
+        if new_attributes == [attribute.id for attribute in coordinator_attrs]:
+            player_attributes = AttributeAndValue.objects.filter(
                 player_id=user_id,
             )
 
-            if attributes:
-                for attribute in attributes:
+            if player_attributes:
+
+                new_attributes = [
+                    attribute.id
+                    for attribute in player_attributes
+                    if attribute.id in new_attributes
+                ]
+
+                for attribute in player_attributes:
                     attribute.value = attributes_and_value.get(
                         str(attribute.attribute_id)
                     )
                     attribute.save()
-                return None
 
-            for attribute_id, value in attributes_and_value.items():
+                if not new_attributes:
+                    return None
+
+            for attribute_id in new_attributes:
+                value = attributes_and_value.get(str(attribute_id))
                 AttributeAndValue.objects.create(
                     player_id=user_id, attribute_id=attribute_id, value=value
                 )
@@ -114,7 +124,7 @@ class CoordinatorManager(BaseUserManager):
 class Coordinator(AuthUser, BaseUserModel):
     """Модель координатора."""
 
-    phone_number = PhoneNumberField(blank=True, null=True)
+    phone_number = PhoneNumberField(region="RU", blank=True, null=True)
     company = models.CharField(blank=True, null=True, max_length=50)
     job_title = models.CharField(blank=True, null=True, max_length=50)
     birthday = models.DateField(blank=True, null=True)

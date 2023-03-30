@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.business_game.views import GameVieSet, TestView
+from apps.business_game.views import GameVieSet
 
 urlpatterns = [
     # path(
@@ -15,5 +15,4 @@ urlpatterns = [
             }
         ),
     ),
-    path("api/game/test", TestView.as_view()),
 ]

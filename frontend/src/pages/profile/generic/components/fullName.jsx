@@ -4,9 +4,6 @@ import { useSelector } from "react-redux"
 
 function FullName(props) {
 	const user = useSelector((state) => state.user.user)
-
-	console.log(user)
-
 	return (
 		<>
 			<p className="user_full_name">

@@ -10,4 +10,4 @@ class GameSerializer(serializers.ModelSerializer):
         """Мета класс сериализатора."""
 
         model = Game
-        fields = ["name", "created_at", "coordinator_id"]
+        fields = ["name", "time_start", "coordinator_id"]

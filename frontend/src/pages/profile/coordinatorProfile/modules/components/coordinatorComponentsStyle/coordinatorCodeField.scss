@@ -1,55 +1,49 @@
+@import "../../../../../../sass_library/library.scss";
+
 .coordinator_code {
-  display: flex;
-  align-items: center;
-}
+  @extend %align_center;
 
-.coordinator_code_field {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #6B53FF;
-  border-radius: 20px;
-  background-color: #FFFFFF;
-  padding: 0 30px;
-  height: 55px;
-  width: 100%;
-  font-size: 20px;
-  line-height: 19px;
-  color: rgba(0, 0, 0, 0.8);
-}
+  &__field {
+    @extend %business_game_container;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 30px;
+    border: 1px solid #424A9D;
+    border-radius: $border_radius;
+    height: 45px;
+    background: $white_bc;
+    width: 100%;
 
-.coordinator_buttons_container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+    &_text {
+      @extend %text_decoration;
+      @extend %text_container;
+      color: rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      @media (max-width: 1230px) {
+        max-width: 350px;
+      }
+    }
 
-.coordinator_button {
-  background-position: left;
-  padding-left: 35px;
-  background-repeat: no-repeat;
-  font-size: 14px;
-  line-height: 13px;
-  color: rgba(0, 0, 0, .6);
-  height: 40px;
-}
+    .coordinator_code__container {
+      @extend %align_center;
 
+      .coordinator_code__container_button {
+        background-position: left;
+        padding-left: 35px;
+        background-repeat: no-repeat;
+        font-size: 14px;
+        line-height: 13px;
+        color: rgba(0, 0, 0, .6);
+        height: 40px;
+        overflow: hidden;
 
-.coordinator_button:hover {
-    color: rgba(107, 83, 255, 1);
-}
+        &:hover {
+          color: rgba(66, 74, 157, 1);
 
-.coordinator_button:hover {
-    color: rgba(107, 83, 255, 1);
-}
-
-.coordinator_button:hover {
-    color: rgba(107, 83, 255, 1);
-}
-
-.coordinator_button:last-child {
-    margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 

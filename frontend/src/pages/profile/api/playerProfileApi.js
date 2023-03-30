@@ -24,6 +24,10 @@ export class PlayerInfo {
 		return await axiosInstanceAuth
 			.get("/api/player/attributes/value")
 			.then((response) => {
+				this.dispatch({
+					type: "SET_PLAYER_ATTRIBUTES",
+					payload: response.data,
+				})
 				return response
 			})
 	}

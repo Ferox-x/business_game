@@ -1,6 +1,6 @@
 @import "../../../sass_library/library.scss";
 
 .gradient {
-  background: $gradient_bg;
+  background: linear-gradient(180deg, #0E0F35 0%, #0E0F35 0.01%, #5E68D4 100%);
   height: 100vh;
 }

@@ -1,9 +1,8 @@
 import React from "react"
 import "./styles/back.scss"
-
-import back from "../../static/img/back.svg"
+import sprite from "../../static/img/sprite.svg"
 import { useNavigate } from "react-router-dom"
-import { urls } from "../../urls"
+import { getIconFromSprite } from "../../utilits/utility"
 
 function Back({ url, ...props }) {
 	const navigate = useNavigate()
@@ -14,7 +13,7 @@ function Back({ url, ...props }) {
 
 	return (
 		<div onClick={() => redirectToProfile()} className={"button_back"}>
-			<img src={back} alt="Back Button" />
+			{getIconFromSprite(sprite, "back", 17, 30, "red")}
 		</div>
 	)
 }

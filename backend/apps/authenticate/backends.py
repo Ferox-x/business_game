@@ -63,9 +63,13 @@ class JWTAuthentication(authentication.BaseAuthentication):
             msg = "Ошибка аутентификации. Невозможно декодировать токен."
             raise exceptions.AuthenticationFailed(msg)
 
+        if not AccessToken().check_token_type(payload):
+            msg = "Ошибка аутентификации. Неверный тип токена."
+            raise exceptions.AuthenticationFailed(msg)
+
         roles = AuthRoles().get_roles()
 
-        model = roles.get(payload.get("role"), AuthUser)
+        model = roles.get(payload.get("role"), None)
 
         if not model:
             msg = "Пользователь соответствующий данной роле не найден."

@@ -1,25 +1,36 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./createGame.scss"
 import InputNameGame from "./modules/inputNameGame"
 import InputStartGame from "./modules/inputStartGame"
-import CheckboxAttributeList from "./modules/checkboxAttributeList"
-import InputSearch from "./modules/inputSearch"
-import Button from "../../components/UI-UX/button"
+import CheckboxAttributeList from "../../components/checkBoxAttributeList/checkboxAttributeList"
 import Layout from "../../components/layouts/layout"
-import ButtonCreateGame from "../../components/layouts/burgerMenu/burgerModules/modules/buttonCreateGame"
+import { CreateGameApi } from "./api/createGameApi"
+import { useDispatch } from "react-redux"
+import ButtonPurple from "../../components/UI-UX/button_purple"
 
 function CreateGame(props) {
+	const dispatch = useDispatch()
+
 	const [gameName, setGameName] = useState("")
+	const [timeStart, setTimeStart] = useState("")
+	const [checkBoxData, setCheckBoxData] = useState({})
+	const [listAttributes, setListAttributes] = useState([])
 
-	const [requiredAttributes, setRequiredAttributes] = useState({})
+	function sendCreateGameForm() {
+		let data = {
+			game_name: gameName,
+			time_start: timeStart,
+			required_attributes: checkBoxData,
+		}
 
-	function changeRequiredAttributes(name, value) {
-		let requiredObject = requiredAttributes
-		requiredObject[name] = value
-		setRequiredAttributes({ ...requiredObject })
+		new CreateGameApi(dispatch).postCreateGame(data)
 	}
 
-	console.log(requiredAttributes)
+	useEffect(() => {
+		new CreateGameApi(dispatch).getCoordinatorAttributes().then((data) => {
+			setListAttributes(data)
+		})
+	}, [])
 
 	return (
 		<>
@@ -30,21 +41,17 @@ function CreateGame(props) {
 					<div className="start_game_container">
 						<InputStartGame
 							placeholder={"Не указано"}
-							type={"time"}
+							type={"datetime-local"}
 							label={"Время старта игры"}
+							changeValue={setTimeStart}
 						/>
-						<div className="button_create_game_container">
-							<ButtonCreateGame children={"Создать игру"} />
-							{/*<ButtonCreateGame children={"Создать игру"}*/}
-							{/*                  style={{width: '400px'}}/>*/}
+						<div className="start_game_container__btn">
+							<ButtonPurple onClick={sendCreateGameForm} children={"Создать игру"} />
 						</div>
 					</div>
 				</div>
 				<div className="checkbox_attribute_list_container">
-					<div className="input_search_container">
-						<InputSearch />
-					</div>
-					<CheckboxAttributeList setValue={changeRequiredAttributes} />
+					<CheckboxAttributeList dataList={listAttributes} setValue={setCheckBoxData} />
 				</div>
 			</div>
 		</>

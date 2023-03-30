@@ -28,11 +28,15 @@ function CoordinatorWithData({ data, ...props }) {
 				<div className="user_full_name_container">
 					<FullName />
 				</div>
-				<CoordinatorCodeSectionFill />
+				<div className="user_profile_data__code">
+					<CoordinatorCodeSectionFill />
+				</div>
 				<div className="user_attribute_container">
 					<CoordinatorAttributeList attributes={data} />
 				</div>
-				<InviteButton open={openPopUp} />
+				<div className="user_profile_data__btn">
+					<InviteButton open={openPopUp} />
+				</div>
 			</div>
 			<Popup popUpState={displayPopUp} hide={hidePopUp} />
 		</Layout>

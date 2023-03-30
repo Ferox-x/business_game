@@ -1,8 +1,8 @@
 .burger_container {
-  height: 90%;
+  height: 100%;
   background: #FFFFFF;
-  width: 30%;
-  padding: 3.7% 2% 6% 2%;
+  width: 35%;
+  padding: 3.5% 0 6% 0;
   z-index: 150;
 }
 
@@ -22,10 +22,9 @@
 }
 
 .button_create_game_container {
-  height: 10%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  margin: 0 auto 50px;
+  width: 80%;
+  height: 60px;
 }
 
 @media (max-width: 1000px) {

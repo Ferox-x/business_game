@@ -3,6 +3,37 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 700px) {
+    padding: 0 10%;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 5%;
+  }
+
+  &__code {
+    margin-bottom: 60px;
+  }
+
+  &__btn {
+    width: 400px;
+    height: 60px;
+    margin: 0 auto;
+
+    @media (max-width: 530px) {
+      width: 300px;
+    }
+
+    @media (max-width: 400px) {
+      width: 250px;
+      height: 55px;
+    }
+
+    @media (max-width: 320px) {
+      width: 200px;
+      height: 55px;
+    }
+  }
 }
 
 .user_info_container {
@@ -17,9 +48,6 @@
 
 
 @media (max-width: 700px) {
-  .user_profile_data {
-    padding: 0 10%;
-  }
   .user_info_container {
     margin-bottom: 44px;
   }
